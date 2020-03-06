@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReletorioVenda" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a49e1662-164e-4282-ab08-8024254028d2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="t_celular" class="java.lang.String"/>
+	<parameter name="t_residencial" class="java.lang.String"/>
+	<parameter name="estado_cliente" class="java.lang.String"/>
+	<parameter name="cidade_cliente" class="java.lang.String"/>
+	<parameter name="endereco_cliente" class="java.lang.String"/>
+	<parameter name="nome_cliente" class="java.lang.String"/>
+	<parameter name="cpf" class="java.lang.String"/>
+	<parameter name="rginscricao" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="total" class="java.math.BigDecimal"/>
+	<parameter name="acrescimos" class="java.math.BigDecimal"/>
+	<parameter name="totalconta" class="java.math.BigDecimal"/>
+	<parameter name="qtd_volume" class="java.lang.Integer"/>
+	<parameter name="observacoes" class="java.lang.String"/>
+	<field name="produto" class="tcc.dominio.Produtos"/>
+	<field name="valorRevenda" class="java.math.BigDecimal"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<variable name="total" class="java.lang.Double"/>
+	<title>
+		<band height="243" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="164" height="28" uuid="9c49374c-a226-4098-bf5c-fa42df65b429"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pedido de Venda]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="28" width="281" height="1" uuid="70e29ec2-6916-4b19-85c5-6912058a7268"/>
+			</line>
+			<staticText>
+				<reportElement x="376" y="1" width="179" height="28" uuid="8e1e873e-d6b6-4063-bf97-ba38f2504680"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOJÃO DAS MOTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="29" width="142" height="20" uuid="492e5903-bbb5-4863-b58e-389f8e1055bc"/>
+				<text><![CDATA[LOJÃO DAS MOTOS LTDA.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="49" width="221" height="20" uuid="a4ac9359-5afe-4f30-91d9-2bccd19a65a1"/>
+				<text><![CDATA[CNPJ: 05.942.771/0001-11 - I.E.: 200950150]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="69" width="270" height="20" uuid="19b48df2-1068-426a-872e-1ec0ebe780ac"/>
+				<text><![CDATA[(84) 32942073 - lojaodasmotoscampestre@yahoo.com -]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="89" width="100" height="20" uuid="12dc2033-074c-4b49-955e-5fffb908da22"/>
+				<text><![CDATA[RUA 23 DEZEMBRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="109" width="270" height="20" uuid="6d7505a0-081d-4e0d-baaa-de7902af7d55"/>
+				<text><![CDATA[SÃO JOSÉ DE CAMPESTRE - Rio Grande do Norte - 59275-000]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="128" width="555" height="1" uuid="94392080-2018-48a8-b1fe-5c7fcf3e842c"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="149" width="198" height="20" uuid="33662d3f-0238-4ccd-8f7e-2cc57c25f0f3"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nome_cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="129" width="100" height="20" uuid="b9e3f0cf-ec59-4e91-8fc5-4de9a0d91384"/>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="179" width="100" height="20" uuid="982c270b-3405-43af-85dc-b1d14fd8defb"/>
+				<text><![CDATA[Endereço:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="219" width="198" height="20" uuid="53172949-2e77-482e-80bf-a19dbf987560"/>
+				<textFieldExpression><![CDATA[$P{endereco_cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="114" y="199" width="17" height="20" uuid="06a10b7c-f0cc-43d4-8de8-6147550cb157"/>
+				<text><![CDATA[,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="199" width="114" height="20" uuid="c34f181c-13a7-489c-b817-7b5eb785c5bd"/>
+				<textFieldExpression><![CDATA[$P{cidade_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="199" width="44" height="20" uuid="696608e9-c795-43e4-83ee-dc1bcfcb56a2"/>
+				<textFieldExpression><![CDATA[$P{estado_cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="408" y="129" width="100" height="20" uuid="ac403af7-6980-405a-a092-89089bfdfb63"/>
+				<text><![CDATA[Contatos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="341" y="149" width="100" height="20" uuid="4e504017-320e-42ad-b2e8-8b033ec30e07"/>
+				<textElement>
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{t_celular}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="441" y="149" width="14" height="20" uuid="5783fddf-75af-4a10-92a5-e953a8efa29a"/>
+				<text><![CDATA[,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="149" width="100" height="20" uuid="db7b7ddb-aff1-44e4-8836-06189f4f3380"/>
+				<textElement>
+					<font fontName="Arial" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{t_residencial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="208" y="129" width="100" height="20" uuid="ace505e3-1e2a-4437-8b18-0abe7f3eda5a"/>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="208" y="149" width="103" height="20" uuid="c463ee48-00ae-41c2-9f49-430991656fb0"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cpf}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="208" y="179" width="100" height="20" uuid="51da9155-7cdb-4195-b19a-12cd883d9dff"/>
+				<text><![CDATA[RG/Inscrição:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="208" y="199" width="100" height="20" uuid="0de646e7-3887-4c87-91e1-271bb5dffbb9"/>
+				<textFieldExpression><![CDATA[$P{rginscricao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="408" y="179" width="100" height="20" uuid="28362ad1-2302-4f74-8794-262a40eb0ddd"/>
+				<text><![CDATA[Email:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="368" y="199" width="187" height="20" uuid="aa1b00aa-5c27-464d-8e7b-dbd8346aab4b"/>
+				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="241" width="555" height="1" uuid="9dd29e68-f7db-4800-b17c-3ea9e296b72f"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="428" y="1" width="100" height="20" uuid="dc56f207-f781-449e-ab12-f92312555e9d"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="1" width="66" height="20" uuid="d5c74cb4-8ff4-4dd7-b6cc-e83c1b48ee0b"/>
+				<text><![CDATA[Quant. (x)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="1" width="219" height="20" uuid="e70dcb4a-664c-4c9b-ac4e-b0500322d505"/>
+				<text><![CDATA[Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="1" width="41" height="20" uuid="0e70efee-9f6d-4b93-980f-fe47f10c1c87"/>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="62" height="20" uuid="97393232-a35b-4863-9cd5-77ea9b98459e"/>
+				<text><![CDATA[Cód.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="62" y="0" width="219" height="20" uuid="6d08934c-bb6d-49b3-a6bd-fbb492371b05"/>
+				<textFieldExpression><![CDATA[$F{produto}.getNome_produto()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="62" height="20" uuid="09f7a682-c743-42d2-9347-2a9bdd1d7d17"/>
+				<textFieldExpression><![CDATA[$F{produto}.getId()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="28" height="20" uuid="b4c20ef7-39a0-4d3f-980e-f02b8900d21a"/>
+				<textFieldExpression><![CDATA[$F{valorRevenda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="0" width="60" height="20" uuid="c7163847-2261-45e6-a2de-6b37c9e90afc"/>
+				<textFieldExpression><![CDATA[$F{valorRevenda} * $F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="0" width="50" height="20" uuid="763ce073-7417-4d70-92bf-f4cfe58bdebc"/>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="144" height="20" uuid="d1c2144c-122e-4635-84eb-c49b10dc27a8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="0" width="80" height="20" uuid="0338ede3-22c9-460f-bd93-4c46e32d2baf"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="21d59475-6fe3-4891-b790-145f83d28913"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="173">
+			<staticText>
+				<reportElement x="391" y="0" width="82" height="20" uuid="8a3821be-58e6-4222-92bf-18eeca1ed467"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Produtos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="20" width="82" height="20" uuid="ad9e7ae5-084e-4073-b162-48d316aed946"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Acréscimo (+):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="40" width="82" height="20" uuid="cf91f4dc-62af-4621-9e7e-fb5a948df948"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Conta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="391" y="60" width="82" height="20" uuid="67181d33-a2fd-40b4-93ce-a56e8f4fb00e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Volume(s):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="473" y="0" width="82" height="20" uuid="56b9d2bd-c3c7-4055-b811-54a53495d4dc"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="20" width="82" height="20" uuid="1cc1d3ae-e935-49ca-843f-fecb7d7e455c"/>
+				<textFieldExpression><![CDATA[$P{acrescimos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="40" width="82" height="20" uuid="8292a5ce-d76f-46d5-85e3-fe9d86d9ec0d"/>
+				<textFieldExpression><![CDATA[$P{totalconta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="60" width="82" height="20" uuid="a6c717de-3458-4c84-a5f1-f6e1a20b21bc"/>
+				<textFieldExpression><![CDATA[$P{qtd_volume}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="92" width="298" height="81" uuid="d0affc46-f410-424f-af8d-f32acb4965e1"/>
+				<textFieldExpression><![CDATA[$P{observacoes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

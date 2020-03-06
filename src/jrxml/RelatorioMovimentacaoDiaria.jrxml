@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioMovimentacaoDiaria" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ccb07b7b-be9c-40c0-bd0b-ceba4cb3f0da">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="precoTotal" class="java.math.BigDecimal"/>
+	<field name="dataCadastroVarejo" class="java.lang.String"/>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="292" height="41" uuid="63d639a8-e5d3-48c5-9dff-982ecf074230"/>
+				<textElement>
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Movimentação Diária]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="159" height="25" uuid="9e92f619-ccf2-499d-976f-91ab974bdf35"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Lojão das Motos - LTDA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="69" width="555" height="1" uuid="eb8dfecc-5ca4-4ceb-812f-92f8004a672c"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="1fe2e949-e289-4953-bd5f-0de3bb3a0616"/>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="126" height="20" uuid="4071d8f2-cdc7-4e52-bbb6-3318614f80ed"/>
+				<text><![CDATA[Valor Diário]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="140" height="20" uuid="e99d2f2c-716a-4c48-b4a8-fb372fc45ee9"/>
+				<textFieldExpression><![CDATA[$F{dataCadastroVarejo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="100" height="20" uuid="39ee8dce-fb29-41c5-92d8-02d198a2e3b4"/>
+				<textFieldExpression><![CDATA[$F{precoTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="ae891b00-f0cc-4a45-8d06-6382599a85e9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="0" width="80" height="20" uuid="b3c04d81-a825-44a2-b40a-ea53fad60a43"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="505" y="0" width="40" height="20" uuid="7414525a-7cca-48ed-b402-68e1480b3927"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GeracaoCarne" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12c0633f-9bc5-40de-97f5-07578eeecf4f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="cliente" class="tcc.dominio.ClienteFisico"/>
+	<field name="venda" class="tcc.dominio.Venda"/>
+	<field name="valorDevido" class="java.math.BigDecimal"/>
+	<field name="dataVencimento" class="java.lang.String"/>
+	<field name="quantidadeParcelas" class="java.lang.Integer"/>
+	<field name="idParcela" class="java.lang.Integer"/>
+	<detail>
+		<band height="258" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="0" width="183" height="25" uuid="bd0f12dd-0a6d-4f5f-bb5a-201db1e0e53a"/>
+				<textElement markup="html">
+					<font fontName="SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOJÃO DAS MOTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="38" width="32" height="20" uuid="69450303-abe6-40b4-9d7e-6106f6725b48"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="49" y="38" width="177" height="20" uuid="b41d514d-f5d1-46bc-9f2e-d79311495933"/>
+				<textElement markup="none">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}.getNome()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="58" width="47" height="20" uuid="94ee6b23-152c-40ae-b9bb-08459e3e363a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cód.Venda:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="64" y="58" width="90" height="20" uuid="95007551-2d62-443a-8b4b-472e8cc18b28"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{venda}.getId_venda()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="78" width="69" height="20" uuid="6c592fc2-1b88-4703-b5b0-d3fd87881146"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Valor da Parcela:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="86" y="78" width="100" height="20" uuid="ef838f2a-0e0a-43ad-81b3-fdadc4de8e83"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorDevido}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="98" width="80" height="20" uuid="25f1e353-d77d-449c-9d67-4eb170b8c69b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Data de vencimento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="97" y="98" width="100" height="20" uuid="49523c69-c246-406a-a3a1-86d1c3035bbe"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataVencimento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="118" width="58" height="20" uuid="058fc524-fc89-41f3-9398-848f153db8c4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cód. Parcela:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="74" y="118" width="100" height="20" uuid="b50e8ce9-c9ab-4bab-978c-86405d1a4a23"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idParcela}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="138" width="248" height="20" uuid="221f307e-fa07-44bf-b0dd-2362b734816a"/>
+				<text><![CDATA[ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="80" y="198" width="100" height="20" uuid="d7f943ce-f736-400d-9b75-437846587480"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="17" y="178" width="63" height="20" uuid="0fe104b2-4819-42e6-b6f2-39d771d4af1e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Data Pgto.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="158" width="63" height="20" uuid="c99485d4-e787-4a81-8296-0046b84e4134"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Juros/Multa:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="80" y="158" width="100" height="20" uuid="f15e59ac-cab2-41e2-a185-8100e33e0a28"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="17" y="198" width="63" height="20" uuid="61ae82de-0640-4a7b-882a-c9efe6101a23"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total Pago:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="80" y="178" width="100" height="20" uuid="22715673-57f2-4377-9c41-a530f11330d3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="226" y="0" width="17" height="212" uuid="4c4eaa37-7a2e-4c2d-961f-225d9a2c1715"/>
+				<textElement rotation="Left"/>
+				<text><![CDATA[_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  _ _ _ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="0" width="183" height="25" uuid="94f4bca0-8b73-40bc-b2c8-a401f2c58068"/>
+				<textElement markup="html">
+					<font fontName="SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOJÃO DAS MOTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="38" width="32" height="20" uuid="97277d74-c1ec-4bb4-ad95-743a44bd0a89"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="289" y="38" width="177" height="20" uuid="dbd9dcae-0b4e-4a11-a7ab-23f19b1a7f98"/>
+				<textElement markup="none">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}.getNome()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="58" width="90" height="20" uuid="cbb777c5-d66f-43e9-9b31-8d1e8feabd6d"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{venda}.getId_venda()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="257" y="58" width="47" height="20" uuid="c6f8d45a-c9fe-4b2a-9ae0-74c2c4ef375c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cód.Venda:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="326" y="78" width="100" height="20" uuid="5122343d-c6ce-4ee9-9c9e-e76083b0e9a2"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valorDevido}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="257" y="78" width="69" height="20" uuid="8db98d26-a9f0-4a8e-8605-35ab836dde58"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Valor da Parcela:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="98" width="80" height="20" uuid="5f9f7c54-69ba-42f9-8fc1-397c66cebe32"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Data de vencimento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="337" y="98" width="100" height="20" uuid="2c26318f-d65d-480d-9a21-c618cef6efbc"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataVencimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="118" width="100" height="20" uuid="93f57c9a-4f07-4066-9c3a-9894abfbc577"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idParcela}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="257" y="118" width="58" height="20" uuid="1c558480-753e-475b-bb46-e04939ba302f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Cód. Parcela:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="319" y="158" width="100" height="20" uuid="dc83e4fc-bcbf-4ffd-8caf-6e544d7e8517"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="257" y="158" width="63" height="20" uuid="3d2e2ac1-595a-4357-a034-12325d1bded7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Juros/Multa:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="319" y="198" width="100" height="20" uuid="82258f2b-7b79-4d26-ad97-8928f3c769b5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="319" y="178" width="100" height="20" uuid="a1b95738-f836-454b-ba35-e283fe0f6225"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="257" y="178" width="63" height="20" uuid="59bd229e-43b6-468f-b28c-f92578c6dd53"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total Pago:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="198" width="63" height="20" uuid="e5efe521-7901-4ce4-bd74-7299c6651e9c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Data Pgto.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="248" y="138" width="307" height="20" uuid="8c478809-5ba6-4718-aa57-de351884ed71"/>
+				<text><![CDATA[ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="218" width="29" height="20" uuid="d050ba9b-1a16-440d-a928-4aa792545d01"/>
+				<text><![CDATA[_ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="526" y="218" width="29" height="20" uuid="45d96df6-034f-442c-b4d3-9da89120a7ac"/>
+				<text><![CDATA[_ _ _]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="238" width="29" height="20" uuid="ea7dd179-824f-45b4-a55c-d238565a2239"/>
+				<text><![CDATA[____]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="526" y="238" width="29" height="20" uuid="75918dfb-5e68-4efa-81c8-1d7880fdcae7"/>
+				<text><![CDATA[____]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="127">
+			<staticText>
+				<reportElement x="17" y="0" width="183" height="25" uuid="ae191615-0b18-45c0-b0ee-cd727fcff996"/>
+				<textElement markup="html">
+					<font fontName="SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOJÃO DAS MOTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="55" width="100" height="20" uuid="2a955726-150f-4447-9694-7310a3402837"/>
+				<text><![CDATA[Data da Compra:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="75" width="100" height="20" uuid="e02b2d59-4015-4bbb-b7a6-c0a7aa72d541"/>
+				<text><![CDATA[Valor da Compra:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="95" width="100" height="20" uuid="91a80dc1-865b-4ba1-83b3-3317ef460df0"/>
+				<text><![CDATA[Qtd. Pagamentos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="117" y="95" width="121" height="20" uuid="eb808ec8-a169-4a6a-a58f-ea407d85b1a2"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantidadeParcelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="55" width="57" height="20" uuid="eb6faa77-aa90-4ffa-857e-22e9a0647b8c"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{venda}.getData_venda()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="75" width="121" height="20" uuid="ef82eb92-9389-476e-8785-3cb62377f109"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{venda}.getTotalCompra()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="25" width="113" height="20" uuid="2f6c7483-bd83-4440-8fdc-8e4679021f32"/>
+				<textElement markup="html">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Venda no Crediário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="0" width="300" height="20" uuid="f5751135-9dcb-4037-aeec-f41d10fa98bd"/>
+				<textElement verticalAlignment="Top">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reconheço a compra e pagarei a divida conforme dados deste]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="20" width="170" height="20" uuid="514118cf-fceb-437f-b90f-5b4f160994e6"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[documento e do carnê em anexo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="75" width="232" height="20" uuid="839efc64-7372-4e0f-982a-79bbef0d0ce3"/>
+				<text><![CDATA[________________________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="329" y="95" width="204" height="20" uuid="7418d73e-a8cb-48ef-9f38-f6702d714069"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}.getNome()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioPecasBike" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ed4dae3-c297-40ae-aac8-2e37a668c363">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="nomeProduto" class="java.lang.String"/>
+	<field name="precoVarejo" class="java.math.BigDecimal"/>
+	<field name="precoRevenda" class="java.math.BigDecimal"/>
+	<field name="precoDeCompra" class="java.math.BigDecimal"/>
+	<field name="marca" class="java.lang.String"/>
+	<title>
+		<band height="50" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="39" width="555" height="1" uuid="8292a132-6b88-4162-b41a-1ce0c2302622"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="39" uuid="8bcff4ec-576d-4085-ab16-e00b6690bc1d"/>
+				<textElement>
+					<font size="28"/>
+				</textElement>
+				<text><![CDATA[Lojão das Motos - Tabela Produtos Bicicleta]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="255" height="20" uuid="383b0df2-d1ee-4cb2-8fb6-cb0ea9f76d9d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="1" width="66" height="20" uuid="6111a0dc-f132-4883-815d-1e1e8f786343"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Compra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="1" width="100" height="20" uuid="1365ac2c-fecb-466c-90e4-7b4fc2c4e20a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="0" width="71" height="20" uuid="dda3e14d-8c5d-4671-a69d-2de0d942a0ac"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Revenda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="392" y="0" width="63" height="20" uuid="537149c1-2101-498e-973a-78f8a37b8c84"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Varejo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="255" height="20" uuid="e3ec0cdb-f67b-4bd6-ac8b-76c61804a478"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="ed9ca5fa-8a8a-498c-9d3e-18a818e1be70"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="0" width="71" height="20" uuid="4e86ff86-ad0a-44c7-8a40-73419af1b1f9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precoRevenda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="0" width="63" height="20" uuid="f2a0d5e5-31cf-4d6a-b531-7e37635929d4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precoVarejo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="0" width="66" height="20" uuid="274dea58-933b-4235-aaf0-69f9ad8bb242"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precoDeCompra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="115" height="20" uuid="d1f48d27-7352-49ec-8cad-1ad044fd77d8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="a55a5954-40bf-47ad-96df-f3b657739350"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="f887cb3a-11b4-4c64-a6f3-b3bd36f07b90"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
